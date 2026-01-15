@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "a465b296-1323-415d-bfd1-3d744014f72c",
+		"name": "Me Api Playground",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44764382",
+		"_collection_link": "https://sudhir-1423031.postman.co/workspace/42337ddd-86fd-402e-85b9-9cc0ef0b124e/collection/44764382-a465b296-1323-415d-bfd1-3d744014f72c?action=share&source=collection_link&creator=44764382"
+	},
+	"item": [
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Get Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/profile",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create / Update Profile",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sudhir Sharma\",\r\n    \"email\": \"sudhir@example.com\",\r\n    \"education\": [\r\n        {\r\n            \"course\": \"MCA\",\r\n            \"institute\": \"Lovely Professional University\",\r\n            \"startedAt\": \"2024-08-01\",\r\n            \"ongoing\": true\r\n        }\r\n    ],\r\n    \"skills\": [\r\n        \"JavaScript\",\r\n        \"React\",\r\n        \"Node.js\",\r\n        \"MongoDB\",\r\n        \"Express\"\r\n    ],\r\n    \"projects\": [\r\n        {\r\n            \"title\": \"GoGuided\",\r\n            \"description\": \"A MERN stack travel planning platform.\",\r\n            \"skills\": [\r\n                \"mern\",\r\n                \"javascript\",\r\n                \"react\"\r\n            ],\r\n            \"links\": {\r\n                \"github\": \"https://github.com/yourname/goguided\",\r\n                \"live\": \"https://goguided.vercel.app\"\r\n            }\r\n        }\r\n    ],\r\n    \"work\": [\r\n        {\r\n            \"role\": \"Full Stack Developer\",\r\n            \"company\": \"Academic Projects\",\r\n            \"duration\": \"2023–2025\"\r\n        }\r\n    ],\r\n    \"links\": {\r\n        \"github\": \"https://github.com/yourname\",\r\n        \"linkedin\": \"https://linkedin.com/in/yourname\",\r\n        \"portfolio\": \"https://yourportfolio.com\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/profile",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Projects By Skill",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/profile/projects?skill=mern",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"profile",
+								"projects"
+							],
+							"query": [
+								{
+									"key": "skill",
+									"value": "mern"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Top Skills",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/profile/skills/top",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"profile",
+								"skills",
+								"top"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Profile",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/profile/search?q=react",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"profile",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "react"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/health",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
