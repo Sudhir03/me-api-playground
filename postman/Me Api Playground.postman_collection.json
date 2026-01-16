@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "a465b296-1323-415d-bfd1-3d744014f72c",
+		"name": "Me Api Playground",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44764382",
+		"_collection_link": "https://sudhir-1423031.postman.co/workspace/Sudhir's-Workspace~42337ddd-86fd-402e-85b9-9cc0ef0b124e/collection/44764382-a465b296-1323-415d-bfd1-3d744014f72c?action=share&source=collection_link&creator=44764382"
+	},
+	"item": [
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Get Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/profile",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create / Update Profile",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sudhir Sharma\",\r\n    \"email\": \"sudhirsharma9018@gmail.com\",\r\n    \"education\": [\r\n        {\r\n            \"course\": \"Master of Computer Applications (MCA)\",\r\n            \"institute\": \"Lovely Professional University, Punjab\",\r\n            \"startedAt\": \"2024-01-01\",\r\n            \"ongoing\": true\r\n        },\r\n        {\r\n            \"course\": \"Bachelor of Computer Applications (BCA)\",\r\n            \"institute\": \"University of Jammu\",\r\n            \"startedAt\": \"2020-09-01\",\r\n            \"completedAt\": \"2023-09-01\",\r\n            \"ongoing\": false\r\n        }\r\n    ],\r\n    \"skills\": [\r\n        \"JavaScript\",\r\n        \"Node.js\",\r\n        \"Express.js\",\r\n        \"MongoDB\",\r\n        \"React.js\",\r\n        \"REST APIs\",\r\n        \"Socket.io\",\r\n        \"WebRTC\",\r\n        \"Cloudinary\",\r\n        \"TailwindCSS\",\r\n        \"React Query\",\r\n        \"Git\",\r\n        \"Postman\"\r\n    ],\r\n    \"projects\": [\r\n        {\r\n            \"title\": \"Wave\",\r\n            \"description\": \"A real-time video and chat platform supporting WebRTC-based peer-to-peer communication with live messaging.\",\r\n            \"skills\": [\r\n                \"JavaScript\",\r\n                \"Node.js\",\r\n                \"React.js\",\r\n                \"Express.js\",\r\n                \"MongoDB\",\r\n                \"WebRTC\",\r\n                \"Socket.io\",\r\n                \"React Query\",\r\n                \"TailwindCSS\",\r\n                \"Cloudinary\"\r\n            ],\r\n            \"links\": {\r\n                \"github\": \"https://github.com/Sudhir03/Wave.git\",\r\n                \"live\": \"https://wave1.netlify.app\"\r\n            }\r\n        },\r\n        {\r\n            \"title\": \"GoGuided\",\r\n            \"description\": \"A full-stack tourism and booking platform with payments, interactive maps, and media uploads.\",\r\n            \"skills\": [\r\n                \"JavaScript\",\r\n                \"React.js\",\r\n                \"Node.js\",\r\n                \"Express.js\",\r\n                \"MongoDB\",\r\n                \"REST APIs\",\r\n                \"Razorpay\",\r\n                \"Leaflet.js\",\r\n                \"Cloudinary\",\r\n                \"TailwindCSS\"\r\n            ],\r\n            \"links\": {\r\n                \"github\": \"https://github.com/Sudhir03/GoGuided.git\",\r\n                \"live\": \"https://go-guided.netlify.app\"\r\n            }\r\n        },\r\n        {\r\n            \"title\": \"WeatherNow\",\r\n            \"description\": \"A mobile-first weather dashboard consuming real-time data from OpenWeatherMap API.\",\r\n            \"skills\": [\r\n                \"JavaScript\",\r\n                \"REST APIs\",\r\n                \"HTML\",\r\n                \"CSS\"\r\n            ],\r\n            \"links\": {\r\n                \"github\": \"https://github.com/Sudhir03/WeatherNow.git\",\r\n                \"live\": \"https://sudhir03.github.io/WeatherNow\"\r\n            }\r\n        }\r\n    ],\r\n    \"work\": [\r\n        {\r\n            \"role\": \"Full Stack Developer\",\r\n            \"company\": \"Academic Projects\",\r\n            \"duration\": \"2023–2025\"\r\n        }\r\n    ],\r\n    \"links\": {\r\n        \"github\": \"https://github.com/Sudhir03\",\r\n        \"linkedin\": \"https://www.linkedin.com/in/sudhirsharma03/\",\r\n        \"portfolio\": \"\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/profile",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Projects By Skill",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/profile/projects?skill=mern",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"profile",
+								"projects"
+							],
+							"query": [
+								{
+									"key": "skill",
+									"value": "mern"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Top Skills",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/profile/skills/top",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"profile",
+								"skills",
+								"top"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Profile",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/profile/search?q=react",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"profile",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "react"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/health",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
