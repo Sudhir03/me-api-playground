@@ -1,21 +1,19 @@
 # Me-API Playground – Backend
 
-A RESTful API that exposes my personal profile, skills, and projects
+A RESTful API that exposes my personal profile, skills, education, and projects
 in a structured and queryable way.
 
 This project is built as part of the **Me-API Playground (Track A)**
 assessment. The API represents a single user profile (me) and allows
-querying skills, projects, and searching across profile data.
+querying skills, projects, education, and searching across profile data.
 
 ---
 
 ## 🚀 Live URLs
 
-- **Base API URL:** https://<backend-url>
-- **Frontend URL:** https://<frontend-url>
-- **Health Check:** GET /health
-
-> Note: URLs will be updated after deployment.
+- **Base API URL:** https://me-api-playground-unpi.onrender.com
+- **Frontend URL:** https://me-api-playground-ui.netlify.app/
+- **Health Check:** https://me-api-playground-unpi.onrender.com/health
 
 ---
 
@@ -27,6 +25,7 @@ querying skills, projects, and searching across profile data.
 - **Security:** express-rate-limit
 - **Configuration:** dotenv
 - **CORS:** Enabled
+- **Frontend:** React (Vite), TailwindCSS
 
 ---
 
@@ -37,7 +36,7 @@ The backend follows a simple layered architecture:
 - **Routes** – Define API endpoints
 - **Controllers** – Handle request logic and responses
 - **Models** – Mongoose schemas for MongoDB
-- **Server** – App initialization, middleware, and DB connection
+- **Server** – App initialization and database connection
 
 The API is intentionally designed to manage a **single profile**
 document representing one user.
@@ -63,6 +62,8 @@ document representing one user.
 ## 📊 Data Model (Profile)
 
 The Profile schema stores the following information:
+
+### Basic Info
 
 - **name** (String)
 - **email** (String)
@@ -118,34 +119,15 @@ Response:
 
 GET /profile
 
+Returns the complete profile document.
+
 ---
 
 ### Create or Update Profile
 
 PUT /profile
 
-Example request body:
-{
-"name": "Sudhir Sharma",
-"email": "sudhir@example.com",
-"skills": ["JavaScript", "Node.js", "React"],
-"projects": [
-{
-"title": "GoGuided",
-"description": "Travel planning platform",
-"skills": ["MERN", "Map APIs"],
-"links": {
-"github": "https://github.com/...",
-"live": "https://..."
-}
-}
-],
-"links": {
-"github": "https://github.com/...",
-"linkedin": "https://linkedin.com/in/...",
-"portfolio": "https://..."
-}
-}
+Creates or updates the single profile document using an upsert strategy.
 
 ---
 
@@ -181,7 +163,7 @@ Searches across:
 
 A Postman collection is included in the repository.
 
-Location:
+**Location:**
 postman/me-api-playground.postman_collection.json
 
 The collection contains requests for:
@@ -193,34 +175,30 @@ The collection contains requests for:
 - Get top skills
 - Search profile
 
----
-
 ## 🔧 Example cURL Requests
 
 Health Check:
-curl https://<backend-url>/health
+curl https://me-api-playground-unpi.onrender.com/health
 
 Get Profile:
-curl https://<backend-url>/profile
+curl https://me-api-playground-unpi.onrender.com/profile
 
 Get Projects by Skill:
-curl "https://<backend-url>/profile/projects?skill=react"
+curl "https://me-api-playground-unpi.onrender.com/profile/projects?skill=react"
 
 Search Profile:
-curl "https://<backend-url>/profile/search?q=node"
-
----
+curl "https://me-api-playground-unpi.onrender.com/profile/search?q=node"
 
 ## ⚙️ Local Setup
 
 1. Clone the repository
-2. Install dependencies using `npm install`
+2. Install dependencies:
+   npm install
 3. Create a `.env` file with:
    PORT=5000
    MONGO_URI=your_mongodb_connection_string
-4. Start the server using `npm start`
-
----
+4. Start the server:
+   npm start
 
 ## ⚠️ Known Limitations
 
@@ -229,9 +207,8 @@ curl "https://<backend-url>/profile/search?q=node"
 - CORS is open for simplicity
 - No automated tests included
 
----
-
 ## 👤 Author
 
-Sudhir Sharma  
-Backend / Full-Stack Developer
+**Sudhir Sharma**  
+MCA Student (Lovely Professional University)  
+Backend / Full-Stack Developer | Open to Internship Opportunities
