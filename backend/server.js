@@ -9,6 +9,8 @@ const profileRoutes = require("./routes/profile.routes");
 // Listening to the server
 const server = express();
 
+server.set("trust proxy", 1);
+
 // parshing json
 server.use(express.json());
 
