@@ -55,26 +55,30 @@ exports.getProjectsBySkill = async (req, res) => {
     const rawSkill = req.query.skill;
     const skill = rawSkill?.trim().toLowerCase();
 
-    if (!skill) {
-      return res.status(400).json({
-        message: "Skill query parameter is required",
-      });
-    }
-
     const profile = await Profile.findOne().select("projects");
 
     if (!profile || !profile.projects) {
       return res.status(200).json({ projects: [] });
     }
 
-    const filteredProjects = profile.projects.filter((p) =>
-      p.skills.some((s) => s.toLowerCase() === skill.toLowerCase())
+    if (!skill) {
+      return res.status(200).json({
+        projects: profile.projects,
+      });
+    }
+
+    const filteredProjects = profile.projects.filter(
+      (p) =>
+        Array.isArray(p.skills) &&
+        p.skills.some((s) => s.toLowerCase() === skill)
     );
 
-    return res.status(200).json({ projects: filteredProjects });
+    return res.status(200).json({
+      projects: filteredProjects,
+    });
   } catch (error) {
     return res.status(500).json({
-      message: "Failed to fetch projects by skill",
+      message: "Failed to fetch projects",
     });
   }
 };
